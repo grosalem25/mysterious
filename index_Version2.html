@@ -3,10 +3,284 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>iMabchui</title>
+  <meta name="description" content="Information about hospital services, care, and visiting.">
+  <title>Mabinay Medicare Community Hospital</title>
+  <style>
+    :root {
+      --navy: #123047;
+      --teal: #087f8c;
+      --pale: #eaf7f7;
+      --ink: #263746;
+      --muted: #62727e;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #e5ecef;
+    }
+
+    .topbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    nav a {
+      color: var(--ink);
+      font-size: .95rem;
+      text-decoration: none;
+    }
+
+    nav a:hover { color: var(--teal); }
+
+    .hero {
+      background: linear-gradient(115deg, #eaf7f7 0%, #f5fbfc 60%, #d9f0f0 100%);
+      padding: 82px 0;
+    }
+
+    .hero-content { max-width: 700px; }
+
+    .eyebrow {
+      color: var(--teal);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 650px;
+      margin: 12px 0 18px;
+      color: var(--navy);
+      font-size: clamp(2.4rem, 6vw, 4.3rem);
+      line-height: 1.08;
+    }
+
+    .hero p {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 13px 22px;
+      border-radius: 6px;
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button:hover { background: #066a75; }
+
+    section { padding: 64px 0; }
+
+    .section-heading {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin: 0 0 30px;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid #e2ebee;
+      border-radius: 10px;
+      background: var(--white);
+    }
+
+    .card .icon {
+      font-size: 1.8rem;
+    }
+
+    .card h3 {
+      margin: 10px 0 8px;
+      color: var(--navy);
+    }
+
+    .card p { margin: 0; color: var(--muted); }
+
+    .visit {
+      background: var(--pale);
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .info-box {
+      padding: 24px;
+      border-radius: 10px;
+      background: var(--white);
+    }
+
+    .info-box h3 { margin-top: 0; color: var(--navy); }
+
+    .notice {
+      padding: 16px 18px;
+      border-left: 4px solid var(--teal);
+      background: #f4fbfb;
+      color: var(--ink);
+    }
+
+    footer {
+      padding: 28px 0;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    footer p { margin: 4px 0; }
+
+    @media (max-width: 700px) {
+      .topbar { padding: 16px 0; align-items: flex-start; flex-direction: column; }
+      nav { gap: 12px 18px; }
+      .hero { padding: 60px 0; }
+      .cards, .visit-grid { grid-template-columns: 1fr; }
+      section { padding: 48px 0; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to my website</h1>
-  <p>This is my first page online.</p>
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="#">Mysterious Community Hospital</a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#visiting">Plan a visit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">Here for your health</div>
+        <h1>Compassionate care, close to home.</h1>
+        <p>
+          Our hospital is committed to supporting patients and families with
+          respectful, thoughtful care at every step.
+        </p>
+        <a class="button" href="#services">Explore our services</a>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-heading">Our services</h2>
+        <p class="section-intro">
+          Find out more about the care and support available at our hospital.
+          Contact us to confirm which services are currently offered.
+        </p>
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true">🩺</div>
+            <h3>Primary care</h3>
+            <p>Health consultations, checkups, and support for your ongoing wellbeing.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🏥</div>
+            <h3>Hospital care</h3>
+            <p>Patient-focused care from our clinical and support teams.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">💙</div>
+            <h3>Patient support</h3>
+            <p>Information and guidance to help patients and families plan their care.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="visit">
+      <div class="container">
+        <h2 class="section-heading">Care with respect and kindness</h2>
+        <p class="section-intro">
+          We aim to make every patient feel welcome, listened to, and supported.
+          Our team works together to provide care for our community.
+        </p>
+      </div>
+    </section>
+
+    <section id="visiting">
+      <div class="container visit-grid">
+        <div>
+          <h2 class="section-heading">Plan your visit</h2>
+          <p class="section-intro">
+            Add your hospital’s address, visiting hours, and directions here so
+            patients and visitors can plan ahead.
+          </p>
+          <div class="notice">
+            <strong>Important:</strong> For a medical emergency, call your local
+            emergency number or go to the nearest emergency department. This
+            website is not monitored for emergencies.
+          </div>
+        </div>
+        <div class="info-box" id="contact">
+          <h3>Contact information</h3>
+          <p><strong>Address:</strong> Add your hospital address</p>
+          <p><strong>Phone:</strong> Add your hospital phone number</p>
+          <p><strong>Hours:</strong> Add your opening or visiting hours</p>
+          <p>Please contact the hospital to confirm details before visiting.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Mysterious Community Hospital</strong></p>
+      <p>Replace this template text with your hospital’s verified information.</p>
+    </div>
+  </footer>
 </body>
 </html>
